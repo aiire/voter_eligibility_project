@@ -7,8 +7,9 @@ age = int(input("How old are you? "))
 
 def yes_no(prompt):
     answer = "\0"
-    while answer.lower() not in ["y", "n"]:
+    while answer not in ["y", "n"]:
         answer = input(f'{prompt} (y/n): ')
+        answer = answer.lower().strip()
     return answer == "y"
 
 citizen = yes_no("Are you a legal citizen of the United States?")
